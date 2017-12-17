@@ -1,0 +1,11 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "cstdlib": "c",
+        "array": "c",
+        "initializer_list": "c",
+        "utility": "c",
+        "gl.h": "c",
+        "log.h": "c"
+    }
+}
