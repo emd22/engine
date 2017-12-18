@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/engine.dir/engine/main.c.o"
   "CMakeFiles/engine.dir/engine/util/string.c.o"
+  "CMakeFiles/engine.dir/engine/main.c.o"
   "CMakeFiles/engine.dir/engine/shader.c.o"
-  "CMakeFiles/engine.dir/logging/log.c.o"
+  "CMakeFiles/engine.dir/engine/logging/log.c.o"
   "engine.pdb"
   "engine"
 )

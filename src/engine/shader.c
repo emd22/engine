@@ -1,7 +1,8 @@
+#include <GL/glew.h>
 #include <GL/gl.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include <shader.h>
 #include <util/string.h>
 #include <logging/log.h>
@@ -23,6 +24,7 @@ GLuint load_shaders(const char *vertex_path, const char *fragment_path) {
             string_cat_c(&vertex_shader_code, line);
         }
         fclose(vertex_shader_stream);
+        string_edit(&vertex_shader_code, string_len(&vertex_shader_code)+1, '\0');
     }
     else {
         engine_log("Cannot find file %s\n", vertex_path);
@@ -43,6 +45,7 @@ GLuint load_shaders(const char *vertex_path, const char *fragment_path) {
             string_cat_c(&fragment_shader_code, line);
         }
         fclose(fragment_shader_stream);
+        string_edit(&fragment_shader_code, string_len(&fragment_shader_code)+1, '\0');
     }
     else {
         engine_log("Cannot find file %s\n", fragment_path);

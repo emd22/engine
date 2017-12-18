@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ethan/Desktop/game-engine/src
+CMAKE_SOURCE_DIR = /home/ethan/Desktop/engine/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ethan/Desktop/game-engine/build
+CMAKE_BINARY_DIR = /home/ethan/Desktop/engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ethan/Desktop/game-engine/build/CMakeFiles /home/ethan/Desktop/game-engine/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ethan/Desktop/engine/build/CMakeFiles /home/ethan/Desktop/engine/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ethan/Desktop/game-engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ethan/Desktop/engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,33 @@ engine: cmake_check_build_system
 engine/fast:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/build
 .PHONY : engine/fast
+
+engine/logging/log.o: engine/logging/log.c.o
+
+.PHONY : engine/logging/log.o
+
+# target to build an object file
+engine/logging/log.c.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/logging/log.c.o
+.PHONY : engine/logging/log.c.o
+
+engine/logging/log.i: engine/logging/log.c.i
+
+.PHONY : engine/logging/log.i
+
+# target to preprocess a source file
+engine/logging/log.c.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/logging/log.c.i
+.PHONY : engine/logging/log.c.i
+
+engine/logging/log.s: engine/logging/log.c.s
+
+.PHONY : engine/logging/log.s
+
+# target to generate assembly for a file
+engine/logging/log.c.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/logging/log.c.s
+.PHONY : engine/logging/log.c.s
 
 engine/main.o: engine/main.c.o
 
@@ -204,33 +231,6 @@ engine/util/string.c.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/engine/util/string.c.s
 .PHONY : engine/util/string.c.s
 
-logging/log.o: logging/log.c.o
-
-.PHONY : logging/log.o
-
-# target to build an object file
-logging/log.c.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/logging/log.c.o
-.PHONY : logging/log.c.o
-
-logging/log.i: logging/log.c.i
-
-.PHONY : logging/log.i
-
-# target to preprocess a source file
-logging/log.c.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/logging/log.c.i
-.PHONY : logging/log.c.i
-
-logging/log.s: logging/log.c.s
-
-.PHONY : logging/log.s
-
-# target to generate assembly for a file
-logging/log.c.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/logging/log.c.s
-.PHONY : logging/log.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -238,8 +238,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... engine"
 	@echo "... rebuild_cache"
+	@echo "... engine"
+	@echo "... engine/logging/log.o"
+	@echo "... engine/logging/log.i"
+	@echo "... engine/logging/log.s"
 	@echo "... engine/main.o"
 	@echo "... engine/main.i"
 	@echo "... engine/main.s"
@@ -249,9 +252,6 @@ help:
 	@echo "... engine/util/string.o"
 	@echo "... engine/util/string.i"
 	@echo "... engine/util/string.s"
-	@echo "... logging/log.o"
-	@echo "... logging/log.i"
-	@echo "... logging/log.s"
 .PHONY : help
 
 

@@ -23,8 +23,8 @@ void string_edit(string_t *string, int index, char c) {
         string->string = realloc(string->string, string->size*2);
         string->size *= 2;
     }
-    if (index > string_len(string) || index < 0) {
-        engine_log("trying to access string outside boundaries %d is not between %d and 0.\n", index, string_len(string));
+    if (index > string->size || index < 0) {
+        engine_log("trying to access string outside boundaries %d is not between %d and 0.\n", index, string->size);
         return;
     }
     string->string[index] = c;
@@ -36,9 +36,11 @@ void string_edit(string_t *string, int index, char c) {
 }
 
 char string_get(string_t *string, int index) {
-    if (index > string_len(string) || index < 0) {
-        engine_log("trying to access string outside boundaries %d is not between %d and 0.\n", index, string_len(string));
+    if (index > string->size || index < 0) {
+        engine_log("trying to access string outside boundaries. %d is not between %d and 0.\n", index, string->size);
+        return 0;
     }
+    return string->string[index];
 }
 
 void string_copy(string_t *dest, string_t *src) {

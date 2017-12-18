@@ -6,19 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/ethan/Desktop/game-engine/src/../include/engine/engine.h
+/home/ethan/Desktop/engine/src/../include/engine/engine.h
 
-/home/ethan/Desktop/game-engine/src/../include/engine/logging/log.h
+/home/ethan/Desktop/engine/src/../include/engine/logging/log.h
 stdio.h
 -
 
-/home/ethan/Desktop/game-engine/src/../include/engine/shader.h
+/home/ethan/Desktop/engine/src/../include/engine/shader.h
 GL/gl.h
 -
 
-/home/ethan/Desktop/game-engine/src/../include/engine/util/string.h
+/home/ethan/Desktop/engine/src/../include/engine/util/string.h
 
-/home/ethan/Desktop/game-engine/src/engine/main.c
+/home/ethan/Desktop/engine/src/engine/logging/log.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+stdarg.h
+-
+logging/log.h
+-
+engine.h
+-
+
+/home/ethan/Desktop/engine/src/engine/main.c
 stdio.h
 -
 stdlib.h
@@ -34,12 +48,16 @@ logging/log.h
 shader.h
 -
 
-/home/ethan/Desktop/game-engine/src/engine/shader.c
+/home/ethan/Desktop/engine/src/engine/shader.c
+GL/glew.h
+-
 GL/gl.h
 -
 stdio.h
 -
 stdlib.h
+-
+string.h
 -
 shader.h
 -
@@ -48,7 +66,7 @@ util/string.h
 logging/log.h
 -
 
-/home/ethan/Desktop/game-engine/src/engine/util/string.c
+/home/ethan/Desktop/engine/src/engine/util/string.c
 string.h
 -
 stdlib.h
@@ -60,34 +78,10 @@ util/string.h
 engine.h
 -
 
-/home/ethan/Desktop/game-engine/src/logging/log.c
-stdio.h
--
-stdlib.h
--
-stdbool.h
--
-stdarg.h
--
-logging/log.h
--
-engine.h
--
-
 /usr/local/include/GLFW/glfw3.h
 stddef.h
 -
 stdint.h
--
-OpenGL/gl3.h
--
-OpenGL/gl3ext.h
--
-OpenGL/gl.h
--
-OpenGL/glu.h
--
-GL/glcorearb.h
 -
 GLES/gl.h
 -
@@ -105,12 +99,26 @@ GLES3/gl31.h
 -
 GLES2/gl2ext.h
 -
-vulkan/vulkan.h
+GLES3/gl32.h
+-
+GLES2/gl2ext.h
+-
+OpenGL/gl3.h
+-
+OpenGL/gl3ext.h
+-
+GL/glcorearb.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
 -
 GL/gl.h
 -
 GL/glext.h
 -
 GL/glu.h
+-
+vulkan/vulkan.h
 -
 

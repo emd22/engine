@@ -97,8 +97,6 @@ int main() {
     engine_log_init();
     glfw_setup(&window);
 
-    engine_log("chut %d", 5);
-
     GLuint vertexbuffer;
     vertexbuffer = triangle_setup();
 

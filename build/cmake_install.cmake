@@ -1,4 +1,4 @@
-# Install script for directory: /home/ethan/Desktop/game-engine/src
+# Install script for directory: /home/ethan/Desktop/engine/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ethan/Desktop/game-engine/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ethan/Desktop/engine/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
